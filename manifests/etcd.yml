@@ -53,8 +53,14 @@ instance_groups:
     properties:
       tls:
         etcd:
-          server: ((tls_etcd_server))
-          client: ((tls_etcd_client))
+          server:
+            ca: ((tls_etcd_server.ca))
+            certificate: ((tls_etcd_server.certificate))
+            private_key: ((tls_etcd_server.private_key))
+          client:
+            ca: ((tls_etcd_client.ca))
+            certificate: ((tls_etcd_client.certificate))
+            private_key: ((tls_etcd_client.private_key))
   - name: bpm
     release: bpm
 
@@ -73,7 +79,10 @@ instance_groups:
       etcd: {from: etcd}
   properties:
     tls:
-      etcd_client: ((tls_etcd_client))
+      etcd_client:
+        ca: ((tls_etcd_client.ca))
+        certificate: ((tls_etcd_client.certificate))
+        private_key: ((tls_etcd_client.private_key))
 
 update:
   serial: true

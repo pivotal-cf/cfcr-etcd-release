@@ -1,29 +1,3 @@
-# Gopkg.toml example
-#
-# Refer to https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md
-# for detailed Gopkg.toml documentation.
-#
-# required = ["github.com/user/thing/cmd/thing"]
-# ignored = ["github.com/user/project/pkgX", "bitbucket.org/user/project/pkgA/pkgY"]
-#
-# [[constraint]]
-#   name = "github.com/user/project"
-#   version = "1.0.0"
-#
-# [[constraint]]
-#   name = "github.com/user/project2"
-#   branch = "dev"
-#   source = "github.com/myfork/project2"
-#
-# [[override]]
-#   name = "github.com/x/y"
-#   version = "2.4.0"
-#
-# [prune]
-#   non-go = false
-#   go-tests = true
-#   unused-packages = true
-
 required = ["github.com/onsi/ginkgo/ginkgo"]
 
 [[constraint]]
@@ -42,6 +16,19 @@ required = ["github.com/onsi/ginkgo/ginkgo"]
   name = "github.com/satori/go.uuid"
   version = "1.2.0"
 
+[[constraint]]
+  revision = "f58b3a1827c1f4359397485d781c16f102e4b430"
+  name = "github.com/cloudfoundry/bosh-cli"
+
+[[override]]
+  revision = "c1f48d5ce4f292dfb775ef52aaedd15be323510d"
+  name = "github.com/cheggaaa/pb"
+
+[[override]]
+  revision = "a960ab178e64b43d19051be6fd2891ff695bb206"
+  name = "github.com/cloudfoundry/bosh-utils"
+
 [prune]
   go-tests = true
+  non-go = true
   unused-packages = true
