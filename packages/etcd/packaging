@@ -1,12 +1,32 @@
-set -e
+set -eu
 
-ETCD_VERSION="3.3.*"
+ETCD_PACKAGE=etcd
+ETCD_VERSION="3.3.10"
 
 mkdir "${BOSH_INSTALL_TARGET:?}/bin"
-tar xvf etcd/etcd-v${ETCD_VERSION}-linux-amd64.tar.gz
+tar xvf etcd/${ETCD_PACKAGE}-v${ETCD_VERSION}-linux-amd64.tar.gz
 
 cp -a etcd-v${ETCD_VERSION}-linux-amd64/etcd "${BOSH_INSTALL_TARGET:?}/bin/etcd"
 chmod +x "${BOSH_INSTALL_TARGET:?}/bin/etcd"
 
 cp -a etcd-v${ETCD_VERSION}-linux-amd64/etcdctl "${BOSH_INSTALL_TARGET:?}/bin/etcdctl"
 chmod +x "${BOSH_INSTALL_TARGET:?}/bin/etcdctl"
+
+
+# Open Source Licensing Information, used by the vmware OSM system
+# These license abbreviations are defined by the OSM system
+# See https://github.com/pivotal-cf/pks-bosh-lifecycle-home/tree/master/osl/osm-blob-manifests
+
+ETCD_LICENSE="Apache2.0"
+ETCD_SOURCE_URL="https://github.com/etcd-io/etcd/archive/v${ETCD_VERSION}.tar.gz"
+
+cat <<EOF > ${BOSH_INSTALL_TARGET}/boshcycle_osm.json
+{ "packages": [
+    {
+    "name": "$ETCD_PACKAGE",
+    "version": "$ETCD_VERSION",
+    "url": "$ETCD_SOURCE_URL",
+    "license": "$ETCD_LICENSE"
+    }
+]}
+EOF
