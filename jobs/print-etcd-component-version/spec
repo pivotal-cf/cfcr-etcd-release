@@ -7,6 +7,6 @@ templates:
 packages:
 - acceptance
 - etcd
-- golang-1.11-linux
+- golang-1.12-linux
 
 properties: {}
