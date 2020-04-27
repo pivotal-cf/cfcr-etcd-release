@@ -9,6 +9,8 @@ builds:
     version: v1.7.0
   532b6e36-ae99-4c03-5510-5dd0e19657da:
     version: 1.11.1
+  718343da-2d9e-4f7a-5bbb-5c95954a16b3:
+    version: 1.6.2-build.2-1.6.x
   784db40d-4214-4fc9-7399-ba695c67e020:
     version: 1.10.0
   8625dfb6-5240-4342-6f98-2d3f6a5eac20:
