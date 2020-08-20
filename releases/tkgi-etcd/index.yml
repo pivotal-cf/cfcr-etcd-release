@@ -1,0 +1,4 @@
+builds:
+  646f1221-a5b7-4679-461b-d9f790922bc3:
+    version: 1.7.0-build.39-tkgi-etcd
+format-version: "2"
