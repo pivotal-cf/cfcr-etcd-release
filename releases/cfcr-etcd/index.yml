@@ -7,6 +7,8 @@ builds:
     version: "1.2"
   35a9c7ad-1452-4551-7548-b54f84fc12ab:
     version: "1.1"
+  4d9e6764-94bc-4629-627f-178561c4b2c2:
+    version: 1.7.0-build.41-1.7.x
   8625dfb6-5240-4342-6f98-2d3f6a5eac20:
     version: 1.4.0
   9fa0d5fa-1b89-4985-43a8-b7919f1b3868:
