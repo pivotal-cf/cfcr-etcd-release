@@ -1,4 +1,4 @@
-name: cfcr-etcd
+name: tkgi-etcd
 blobstore:
   provider: gcs
   options:
